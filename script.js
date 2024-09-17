@@ -9,3 +9,5 @@ const scene = new THREE.scene();
 
 const geometry = THREE.BoxGeometry(1, 1, 1);
 
+const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
+
