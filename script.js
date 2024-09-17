@@ -7,12 +7,15 @@ camera.position.z = 2;
 const scene = new THREE.Scene();
 
 const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
+const material = new THREE.MeshPhongMaterial({color: 0x44aa88});
 
 const cube = new THREE.Mesh(geometry, material);
 
-scene.add(cube);
+const light = new THREE.DirectionalLight(0xFFFFFF, 3);
+light.position.set(-1, 2, 4);
 
+scene.add(cube);
+scene.add(light);
 
 function render(time) {
     time *= 0.001;
