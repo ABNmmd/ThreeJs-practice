@@ -7,14 +7,18 @@ camera.position.z = 2;
 const scene = new THREE.Scene();
 
 const geometry = new THREE.BoxGeometry(1, 1, 1);
+const cGeometry = new THREE.CircleGeometry(1.5, 32);
 const material = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
+const cMaterial = new THREE.MeshPhongMaterial({ color: 0x000000 });
 
 const cube = new THREE.Mesh(geometry, material);
+const circle = new THREE.Mesh(cGeometry, cMaterial)
 
 const light = new THREE.DirectionalLight(0xFFFFFF, 3);
 light.position.set(-1, 2, 4);
 
 scene.add(cube);
+scene.add(circle);
 scene.add(light);
 
 function render(time) {
@@ -25,7 +29,8 @@ function render(time) {
         camera.aspect = canvas.clientWidth / canvas.clientHeight;
         camera.updateProjectionMatrix();
     }
-
+    
+    circle.position.z = -0.5;
     cube.rotation.x = time;
     cube.rotation.y = time;
 
