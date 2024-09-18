@@ -20,7 +20,7 @@ scene.add(light);
 function render(time) {
     time *= 0.001;
 
-    if (resizeRendererToDisplaySize) {
+    if (resizeRendererToDisplaySize(renderer)) {
         const canvas = renderer.domElement;
         camera.aspect = canvas.clientWidth / canvas.clientHeight;
         camera.updateProjectionMatrix();
