@@ -9,15 +9,15 @@ const scene = new THREE.Scene();
 
 const orbitControl = new OrbitControls(camera, canvas);
 
-const geometry = new THREE.BoxGeometry(1, 1, 1);
+const geometry = new THREE.IcosahedronGeometry(1, 1, 1);
 const material = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
 
-const cube = new THREE.Mesh(geometry, material);
+const earth = new THREE.Mesh(geometry, material);
 
 const light = new THREE.DirectionalLight(0xFFFFFF, 3);
 light.position.set(-1, 2, 4);
 
-scene.add(cube);
+scene.add(earth);
 scene.add(light);
 
 function render(time) {
@@ -29,8 +29,8 @@ function render(time) {
         camera.updateProjectionMatrix();
     }
     
-    cube.rotation.x = time;
-    cube.rotation.y = time;
+    earth.rotation.x = time * 0.8;
+    earth.rotation.y = time * 0.8;
 
     renderer.render(scene, camera);
     requestAnimationFrame(render);
