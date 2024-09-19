@@ -14,11 +14,14 @@ const scene = new THREE.Scene();
 const orbitControl = new OrbitControls(camera, canvas);
 
 
+const earthGrp = new THREE.Group();
+earthGrp.rotation.z = -23.4 * Math.PI / 180;
+
 // meshs
 const loader = new THREE.TextureLoader();
 const geometry = new THREE.IcosahedronGeometry(1, 12);
 const material = new THREE.MeshPhongMaterial({
-    map: loader.load("./assets/earthlights1k.jpg"),
+    map: loader.load("./assets/earthmap1k.jpg"),
 });
 const earth = new THREE.Mesh(geometry, material);
 
@@ -27,13 +30,16 @@ const earth = new THREE.Mesh(geometry, material);
 //lightning
 const hemLight = new THREE.HemisphereLight();
 const light = new THREE.DirectionalLight(0xFFFFFF, 3);
-light.position.set(-1, 2, 4);
+const dirLight = new THREE.DirectionalLight(0xFFFFFF);
+dirLight.position.set(-2, 0.5, 1.5);
 
 
 // adding to the scene
-scene.add(earth);
-scene.add(light);
-scene.add(hemLight);
+earthGrp.add(earth)
+scene.add(earthGrp);
+// scene.add(light);
+// scene.add(hemLight);
+scene.add(dirLight);
 
 
 
