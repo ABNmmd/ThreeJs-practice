@@ -7,6 +7,8 @@ const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 5);
 camera.position.z = 2;
 const scene = new THREE.Scene();
 
+const orbitControl = new OrbitControls(camera, canvas);
+
 const geometry = new THREE.BoxGeometry(1, 1, 1);
 const cGeometry = new THREE.CircleGeometry(1.5, 32);
 const material = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
