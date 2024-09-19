@@ -9,7 +9,7 @@ const scene = new THREE.Scene();
 
 const orbitControl = new OrbitControls(camera, canvas);
 
-const geometry = new THREE.IcosahedronGeometry(1, 1, 1);
+const geometry = new THREE.IcosahedronGeometry(1, 12);
 const material = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
 
 const earth = new THREE.Mesh(geometry, material);
