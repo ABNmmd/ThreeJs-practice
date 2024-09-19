@@ -4,24 +4,20 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
 
 const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 5);
-camera.position.z = 2;
+camera.position.z = 4;
 const scene = new THREE.Scene();
 
 const orbitControl = new OrbitControls(camera, canvas);
 
 const geometry = new THREE.BoxGeometry(1, 1, 1);
-const cGeometry = new THREE.CircleGeometry(1.5, 32);
 const material = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
-const cMaterial = new THREE.MeshPhongMaterial({ color: 0x000000 });
 
 const cube = new THREE.Mesh(geometry, material);
-const circle = new THREE.Mesh(cGeometry, cMaterial);
 
 const light = new THREE.DirectionalLight(0xFFFFFF, 3);
 light.position.set(-1, 2, 4);
 
 scene.add(cube);
-scene.add(circle);
 scene.add(light);
 
 function render(time) {
