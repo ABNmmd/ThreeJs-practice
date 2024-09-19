@@ -10,8 +10,11 @@ const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 5);
 camera.position.z = 4;
 const scene = new THREE.Scene();
 
+// orbit controle
 const orbitControl = new OrbitControls(camera, canvas);
 
+
+// meshs
 const geometry = new THREE.IcosahedronGeometry(1, 12);
 const material = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
 const earth = new THREE.Mesh(geometry, material);
