@@ -5,6 +5,9 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 //rendrer
 const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
 
+// texture loader
+const loader = new THREE.TextureLoader();
+
 //camera
 const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 5);
 camera.position.z = 3;
@@ -24,14 +27,13 @@ const nLight = new THREE.MeshBasicMaterial({
 })
 
 // meshs
-const loader = new THREE.TextureLoader();
 const geometry = new THREE.IcosahedronGeometry(1, 12);
 const material = new THREE.MeshPhongMaterial({
     map: loader.load("./assets/earthmap1k.jpg"),
 });
 const earth = new THREE.Mesh(geometry, material);
-
-
+const nLightMesh = new THREE.Mesh(geometry, nLight);
+earthGrp.add(nLightMesh);
 
 //lightning
 const hemLight = new THREE.HemisphereLight();
