@@ -26,6 +26,11 @@ const material = new THREE.MeshPhongMaterial({
 const earth = new THREE.Mesh(geometry, material);
 
 
+//night light
+const nLight = new THREE.MeshBasicMaterial({
+    map: loader.load("./assets/");
+})
+
 
 //lightning
 const hemLight = new THREE.HemisphereLight();
