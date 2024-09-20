@@ -52,8 +52,8 @@ function render(time) {
         camera.updateProjectionMatrix();
     }
     
-    earth.rotation.x = .1;
-    earth.rotation.y = time;
+    // earth.rotation.x = .1;
+    earthGrp.rotation.y = time;
 
     renderer.render(scene, camera);
     requestAnimationFrame(render);
