@@ -17,6 +17,12 @@ const orbitControl = new OrbitControls(camera, canvas);
 const earthGrp = new THREE.Group();
 earthGrp.rotation.z = -23.4 * Math.PI / 180;
 
+//night light
+const nLight = new THREE.MeshBasicMaterial({
+    map: loader.load("./assets/earthlights1k.jpg"),
+    Blending: THREE.AdditiveBlending,
+})
+
 // meshs
 const loader = new THREE.TextureLoader();
 const geometry = new THREE.IcosahedronGeometry(1, 12);
@@ -25,11 +31,6 @@ const material = new THREE.MeshPhongMaterial({
 });
 const earth = new THREE.Mesh(geometry, material);
 
-
-//night light
-const nLight = new THREE.MeshBasicMaterial({
-    map: loader.load("./assets/");
-})
 
 
 //lightning
