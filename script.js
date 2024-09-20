@@ -23,7 +23,7 @@ earthGrp.rotation.z = -23.4 * Math.PI / 180;
 //night light
 const nLight = new THREE.MeshBasicMaterial({
     map: loader.load("./assets/earthlights1k.jpg"),
-    Blending: THREE.AdditiveBlending,
+    blending: THREE.AdditiveBlending,
 })
 
 // meshs
