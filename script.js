@@ -11,6 +11,8 @@ const loader = new THREE.TextureLoader();
 //camera
 const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 5);
 camera.position.z = 5;
+
+//scene
 const scene = new THREE.Scene();
 
 // orbit controle
