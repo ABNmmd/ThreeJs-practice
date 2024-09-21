@@ -55,7 +55,6 @@ function render(time) {
     time *= 0.0003;
 
     if (resizeRendererToDisplaySize(renderer)) {
-        const canvas = renderer.domElement;
         camera.aspect = canvas.clientWidth / canvas.clientHeight;
         camera.updateProjectionMatrix();
     }
