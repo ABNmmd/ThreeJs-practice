@@ -40,7 +40,7 @@ const nLight = new THREE.MeshBasicMaterial({
 const cloudMat = new THREE.MeshStandardMaterial({
     map: loader.load("./assets/04_earthcloudmap.jpg"),
     transparent: true,
-    opacity: 0.7,
+    opacity: 0.5,
     blending: THREE.AdditiveBlending,
     alphaMap: loader.load('./assets/05_earthcloudmaptrans.jpg'),
 });
@@ -49,7 +49,7 @@ const cloudMat = new THREE.MeshStandardMaterial({
 const earth = new THREE.Mesh(geometry, material);
 const nLightMesh = new THREE.Mesh(geometry, nLight);
 const cloudMesh = new THREE.Mesh(geometry, cloudMat);
-cloudMesh.scale.setScalar(1.003);
+cloudMesh.scale.setScalar(1.007);
 
 //lightning
 // const hemLight = new THREE.HemisphereLight();
@@ -87,10 +87,10 @@ function render(time) {
 requestAnimationFrame(render);
 
 function resizeRendererToDisplaySize(renderer) {
-    const canvas = renderer.domElement;
     const width = canvas.clientWidth;
     const height = canvas.clientHeight;
     const needResize = canvas.width !== width || canvas.height !== height;
+    camera.updateProjectionMatrix();
     if (needResize) {
         renderer.setSize(width, height, false);
     }
