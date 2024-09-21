@@ -49,7 +49,7 @@ const cloudMat = new THREE.MeshStandardMaterial({
 const earth = new THREE.Mesh(geometry, material);
 const nLightMesh = new THREE.Mesh(geometry, nLight);
 const cloudMesh = new THREE.Mesh(geometry, cloudMat);
-cloudMesh.scale.setScalar(1.01);
+cloudMesh.scale.setScalar(1.003);
 
 //lightning
 // const hemLight = new THREE.HemisphereLight();
