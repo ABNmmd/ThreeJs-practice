@@ -25,6 +25,9 @@ earthGrp.rotation.z = -23.4 * Math.PI / 180;
 //earth
 const material = new THREE.MeshPhongMaterial({
     map: loader.load("./assets/00_earthmap1k.jpg"),
+    specularMap: loader.load("./textures/02_earthspec1k.jpg"),
+    bumpMap: loader.load("./textures/01_earthbump1k.jpg"),
+    bumpScale: 0.04,
 });
 
 //night light
@@ -38,7 +41,7 @@ const cloudMat = new THREE.MeshStandardMaterial({
     map: loader.load("./assets/04_earthcloudmap.jpg"),
     transparent: true,
     opacity: 0.8,
-    // blending: THREE.AdditiveBlending,
+    blending: THREE.AdditiveBlending,
     alphaMap: loader.load('./assets/05_earthcloudmaptrans.jpg'),
 });
 
