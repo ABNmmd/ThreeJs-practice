@@ -90,7 +90,6 @@ function resizeRendererToDisplaySize(renderer) {
     const width = canvas.clientWidth;
     const height = canvas.clientHeight;
     const needResize = canvas.width !== width || canvas.height !== height;
-    camera.updateProjectionMatrix();
     if (needResize) {
         renderer.setSize(width, height, false);
     }
