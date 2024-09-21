@@ -10,12 +10,14 @@ const loader = new THREE.TextureLoader();
 
 //camera
 const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 5);
-camera.position.z = 3;
+camera.position.z = 5;
 const scene = new THREE.Scene();
 
 // orbit controle
 const orbitControl = new OrbitControls(camera, canvas);
 
+//geometry
+const geometry = new THREE.IcosahedronGeometry(1, 12);
 
 const earthGrp = new THREE.Group();
 earthGrp.rotation.z = -23.4 * Math.PI / 180;
@@ -33,7 +35,6 @@ const cloudMat = new THREE.MeshStandardMaterial({
 });
 
 // meshs
-const geometry = new THREE.IcosahedronGeometry(1, 12);
 const material = new THREE.MeshPhongMaterial({
     map: loader.load("./assets/earthmap1k.jpg"),
 });
