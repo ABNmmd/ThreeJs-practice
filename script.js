@@ -21,6 +21,7 @@ const orbitControl = new OrbitControls(camera, canvas);
 //geometry
 const geometry = new THREE.IcosahedronGeometry(1, 12);
 
+//earth group
 const earthGrp = new THREE.Group();
 earthGrp.rotation.z = -23.4 * Math.PI / 180;
 
