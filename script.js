@@ -39,6 +39,8 @@ const material = new THREE.MeshPhongMaterial({
 });
 const earth = new THREE.Mesh(geometry, material);
 const nLightMesh = new THREE.Mesh(geometry, nLight);
+const cloudMesh = new THREE.Mesh(geometry, cloudMat);
+cloudMesh.scale.setScalar(1.003);
 
 //lightning
 const hemLight = new THREE.HemisphereLight();
@@ -51,6 +53,7 @@ dirLight.position.set(-2, 0.5, 1.5);
 scene.add(earthGrp);
 earthGrp.add(earth);
 earthGrp.add(nLightMesh);
+earthGrp.add(cloudMesh);
 // scene.add(light);
 // scene.add(hemLight);
 scene.add(dirLight);
@@ -68,6 +71,7 @@ function render(time) {
     // earth.rotation.x = .1;
     earth.rotation.y = time;
     nLightMesh.rotation.y = time;
+    cloudMesh.rotation.y = time;
 
     renderer.render(scene, camera);
     requestAnimationFrame(render);
