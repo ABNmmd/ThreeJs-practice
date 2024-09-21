@@ -24,29 +24,29 @@ earthGrp.rotation.z = -23.4 * Math.PI / 180;
 
 //earth
 const material = new THREE.MeshPhongMaterial({
-    map: loader.load("./assets/earthmap1k.jpg"),
+    map: loader.load("./assets/00_earthmap1k.jpg"),
 });
 
 //night light
 const nLight = new THREE.MeshBasicMaterial({
-    map: loader.load("./assets/earthlights1k.jpg"),
+    map: loader.load("./assets/03_earthlights1k.jpg"),
     blending: THREE.AdditiveBlending,
 });
 
 // cloud
 const cloudMat = new THREE.MeshStandardMaterial({
-    map: loader.load("./assets/earthcloudmap.jpg"),
+    map: loader.load("./assets/04_earthcloudmap.jpg"),
     transparent: true,
     opacity: 0.8,
-    blending: THREE.AdditiveBlending,
-    alphaMap: loader.load('./assets/earthcloudmaptrans.jpg'),
+    // blending: THREE.AdditiveBlending,
+    alphaMap: loader.load('./assets/05_earthcloudmaptrans.jpg'),
 });
 
 // meshs
 const earth = new THREE.Mesh(geometry, material);
 const nLightMesh = new THREE.Mesh(geometry, nLight);
 const cloudMesh = new THREE.Mesh(geometry, cloudMat);
-cloudMesh.scale.setScalar(1.003);
+cloudMesh.scale.setScalar(1.01);
 
 //lightning
 // const hemLight = new THREE.HemisphereLight();
