@@ -24,7 +24,7 @@ earthGrp.rotation.z = -23.4 * Math.PI / 180;
 const nLight = new THREE.MeshBasicMaterial({
     map: loader.load("./assets/earthlights1k.jpg"),
     blending: THREE.AdditiveBlending,
-})
+});
 
 // meshs
 const geometry = new THREE.IcosahedronGeometry(1, 12);
@@ -33,7 +33,6 @@ const material = new THREE.MeshPhongMaterial({
 });
 const earth = new THREE.Mesh(geometry, material);
 const nLightMesh = new THREE.Mesh(geometry, nLight);
-earthGrp.add(nLightMesh);
 
 //lightning
 const hemLight = new THREE.HemisphereLight();
@@ -43,8 +42,9 @@ dirLight.position.set(-2, 0.5, 1.5);
 
 
 // adding to the scene
-earthGrp.add(earth)
 scene.add(earthGrp);
+earthGrp.add(earth);
+earthGrp.add(nLightMesh);
 // scene.add(light);
 // scene.add(hemLight);
 scene.add(dirLight);
@@ -61,7 +61,8 @@ function render(time) {
     }
     
     // earth.rotation.x = .1;
-    earthGrp.rotation.y = time;
+    earth.rotation.y = time;
+    nLightMesh.rotation.y = time;
 
     renderer.render(scene, camera);
     requestAnimationFrame(render);
