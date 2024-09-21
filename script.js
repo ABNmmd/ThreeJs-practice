@@ -74,7 +74,6 @@ function render(time) {
         camera.updateProjectionMatrix();
     }
 
-    // earth.rotation.x = .1;
     earth.rotation.y = time;
     nLightMesh.rotation.y = time;
     cloudMesh.rotation.y = time;
@@ -82,6 +81,7 @@ function render(time) {
     renderer.render(scene, camera);
     requestAnimationFrame(render);
 }
+requestAnimationFrame(render);
 
 function resizeRendererToDisplaySize(renderer) {
     const canvas = renderer.domElement;
@@ -93,5 +93,3 @@ function resizeRendererToDisplaySize(renderer) {
     }
     return needResize;
 }
-
-requestAnimationFrame(render);
