@@ -40,7 +40,7 @@ const nLight = new THREE.MeshBasicMaterial({
 const cloudMat = new THREE.MeshStandardMaterial({
     map: loader.load("./assets/04_earthcloudmap.jpg"),
     transparent: true,
-    opacity: 0.8,
+    opacity: 0.7,
     blending: THREE.AdditiveBlending,
     alphaMap: loader.load('./assets/05_earthcloudmaptrans.jpg'),
 });
