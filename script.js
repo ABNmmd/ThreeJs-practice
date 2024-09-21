@@ -26,6 +26,12 @@ const nLight = new THREE.MeshBasicMaterial({
     blending: THREE.AdditiveBlending,
 });
 
+// cloud
+const cloudMat = new THREE.MeshStandardMaterial({
+    map: loader.load("./assets/earthcloudmap.jpg"),
+    blending: THREE.AdditiveBlending,
+});
+
 // meshs
 const geometry = new THREE.IcosahedronGeometry(1, 12);
 const material = new THREE.MeshPhongMaterial({
