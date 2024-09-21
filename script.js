@@ -22,6 +22,11 @@ const geometry = new THREE.IcosahedronGeometry(1, 12);
 const earthGrp = new THREE.Group();
 earthGrp.rotation.z = -23.4 * Math.PI / 180;
 
+//earth
+const material = new THREE.MeshPhongMaterial({
+    map: loader.load("./assets/earthmap1k.jpg"),
+});
+
 //night light
 const nLight = new THREE.MeshBasicMaterial({
     map: loader.load("./assets/earthlights1k.jpg"),
@@ -35,9 +40,6 @@ const cloudMat = new THREE.MeshStandardMaterial({
 });
 
 // meshs
-const material = new THREE.MeshPhongMaterial({
-    map: loader.load("./assets/earthmap1k.jpg"),
-});
 const earth = new THREE.Mesh(geometry, material);
 const nLightMesh = new THREE.Mesh(geometry, nLight);
 const cloudMesh = new THREE.Mesh(geometry, cloudMat);
