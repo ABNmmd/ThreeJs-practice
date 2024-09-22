@@ -52,7 +52,7 @@ const cloudMat = new THREE.MeshStandardMaterial({
 const earth = new THREE.Mesh(geometry, material);
 const nLightMesh = new THREE.Mesh(geometry, nLight);
 const cloudMesh = new THREE.Mesh(geometry, cloudMat);
-cloudMesh.scale.setScalar(1.007);
+cloudMesh.scale.setScalar(1.003);
 
 //lightning
 // const hemLight = new THREE.HemisphereLight();
@@ -73,16 +73,16 @@ scene.add(dirLight);
 
 
 function render(time) {
-    time *= 0.0003;
+    time *= 0.0001;
 
     if (resizeRendererToDisplaySize(renderer)) {
         camera.aspect = canvas.clientWidth / canvas.clientHeight;
         camera.updateProjectionMatrix();
     }
 
-    earth.rotation.y = time;
-    nLightMesh.rotation.y = time;
-    cloudMesh.rotation.y = time;
+    earth.rotation.y = time * 3;
+    nLightMesh.rotation.y = time * 3;
+    cloudMesh.rotation.y = time * 3.5;
 
     renderer.render(scene, camera);
     requestAnimationFrame(render);
